@@ -1,0 +1,104 @@
+package dmlakdar;
+        
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.Scanner;
+import java.util.Random;
+class MyTask extends TimerTask {
+private int times = 0;
+public void run() {
+times++;
+
+if (times ==180 ) {
+System.out.println("VOUS ETES EN ETAT D'ARRESTATION ! ! ! ");
+
+this.cancel();
+}
+}
+}
+
+
+
+        
+public class DmLakdar {
+    
+
+    /**
+     * @param args the command line 
+     */
+    public static void main(String[] args) {
+        
+        Timer timer = new Timer("Printer");
+    MyTask t = new MyTask();
+    timer.schedule(t, 0, 2000);
+
+        
+        Random rand = new Random();
+        Scanner sc = new Scanner(System.in);
+        
+        int sol1, sol2, sol3,rep1,rep2,rep3,temp;
+        sol1 = rand.nextInt(100)+1;
+        sol2 = rand.nextInt(100)+1;
+        sol3 = rand.nextInt(100)+1;
+       
+        System.out.println("En combien de temps etes vous capable de decoder ce code");
+        temp = sc.nextInt();
+        System.out.println("Vous avez "+temp+" de seconde pour decoder le code");
+        System.out.println("Entrez la premiere partie de la combinaison");
+        rep1 = sc.nextInt();
+        while(rep1!=sol1){    
+            if(rep1<sol1){
+                System.out.println("La valeur est plus grande");
+            }
+            
+            else 
+                System.out.println("La valeur est plus petite");
+            
+            
+            if(rep1==sol1){
+            System.out.println("Vous avez trouvez la solution");
+            }
+         rep1 = sc.nextInt();
+        }
+        
+        
+        System.out.println("Entrez la deuxieme partie de la combinaison");
+        rep2 = sc.nextInt();
+        while(rep2!=sol2){    
+            if(rep2<sol2){
+                System.out.println("La valeur est plus grande");
+            }
+            
+            else 
+                System.out.println("La valeur est plus petite");
+            
+            
+            if(rep2==sol2){
+            System.out.println("Vous avez trouvez la solution");
+            }
+         rep2 = sc.nextInt();
+        }
+            
+       System.out.println("Entrez la troisieme partie de la combinaison");
+        rep3 = sc.nextInt();
+        while(rep3!=sol3){    
+            if(rep3<sol3){
+                System.out.println("La valeur est plus grande");
+            }
+            
+            else 
+                System.out.println("La valeur est plus petite");
+            
+            
+            if(rep3==sol3){
+            System.out.println("Vous avez trouvez la solution");
+            }
+         rep3 = sc.nextInt();
+         
+         System.out.println("La combinaison Ã©tait "+sol1+"-"+sol2+"-"+sol3);
+        }
+        
+        
+                
+}
+}
